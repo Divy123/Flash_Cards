@@ -10,7 +10,7 @@ class AddCard extends React.Component{
     }
     addCard=()=>{
         let deckId=this.props.navigation.state.params.deckId
-        addCardAsync(deckId,this.state)
+         addCardAsync(deckId,this.state).then(results=>this.props.navigation.navigate('DeckView',{entryId:results[deckId]}))
     }
     render(){
         return(
