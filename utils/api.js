@@ -48,10 +48,10 @@ export function getDecks(){
   })
 }
 export function addCardAsync(deckId,val){
-  getDecks().then(results=>{
+  return getDecks().then(results=>{
     
     results[deckId].questions.push(val)
-    AsyncStorage.setItem(FLASH_CARDS_STORAGE_KEY, JSON.stringify(results));
-    
+    AsyncStorage.setItem(FLASH_CARDS_STORAGE_KEY, JSON.stringify(results))
+     return results
   })
 }
